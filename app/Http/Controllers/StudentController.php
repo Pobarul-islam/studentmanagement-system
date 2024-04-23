@@ -42,9 +42,10 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id):View
     {
-        //
+        $student = Student::find($id);
+        return view('students.show')->with('students', $student);
     }
 
     /**

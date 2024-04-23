@@ -31,7 +31,7 @@
                                             <td>{{ $item->mobile }}</td>
 
                                             <td>
-                                                <a href="{{ url('/student/' . $item->id) }}" title="View Student"><button
+                                                <a href="{{ url('/students/' . $item->id) }}" title="View Student"><button
                                                         class="btn btn-info btn-sm"><i class="fa fa-eye"
                                                             aria-hidden="true"></i> View</button></a>
                                                 <a href="{{ url('/student/' . $item->id . '/edit') }}"

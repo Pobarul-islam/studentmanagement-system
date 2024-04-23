@@ -96,12 +96,12 @@ div.content {
             <div class="col-md-3">
                 <!-- The sidebar -->
                 <div class="sidebar">
-                    <a class="active" href="#home">Home</a>
-                    <a href="#news">Student</a>
-                    <a href="#contact">Teacher</a>
-                    <a href="#contact">Courses</a>
-                    <a href="#about">Enrolment</a>
-                    <a href="#about">Payment</a>
+                    <a class="active" href="{{ url('/') }}">Home</a>
+                    <a href="{{ url('/students') }}">Student</a>
+                    <a href="{{ url('/teacher') }}">Teacher</a>
+                    <a href="{{ url('/courses') }}">Courses</a>
+                    <a href="{{ url('/enrolment') }}">Enrolment</a>
+                    <a href="{{ url('/payment') }}">Payment</a>
                 </div>
 
             </div>
