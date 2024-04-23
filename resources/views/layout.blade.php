@@ -106,9 +106,9 @@ div.content {
 
             </div>
             <div class="col-md-9">
-                <div class="content">
-                   test
-                </div>
+                
+                  @yield('content')
+             
             </div>
         </div>
     </div>
