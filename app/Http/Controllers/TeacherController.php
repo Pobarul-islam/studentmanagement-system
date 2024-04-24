@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -50,15 +51,20 @@ class TeacherController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $teachers = Teacher::find($id);
+        return view('teachers.edit')->with('teachers', $teachers);
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        //
+        $teacher = Teacher::find($id);
+        $input = $request->all();
+        $teacher->update($input);
+        return redirect('teachers')->with('flash_message', 'Teacher updated successfully');
     }
 
     /**
