@@ -70,6 +70,9 @@ class CourseController extends Controller
      */
     public function destroy(string $id)
     {
+        Course::destroy($id);
+        return redirect('courses')->with('flash_message', 'courses deleted!');
+
       
     }
 }
