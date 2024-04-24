@@ -72,6 +72,8 @@ class TeacherController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Teacher::destroy($id);
+        return redirect('teachers')->with('flash_message', 'Teacher deleted successfully');
+
     }
 }
