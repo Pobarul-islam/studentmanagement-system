@@ -50,17 +50,21 @@ class BatchController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id): View
     {
-       
+        $batches = Batch::find($id);
+        return view('batches.edit')->with('batches', $batches);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-
+        $batches = Batch::find($id);
+        $input = $request->all();
+        $batches->update($input);
+        return redirect('batches')->with('flash_message', 'Batch Updated!');  
     }
 
     /**
