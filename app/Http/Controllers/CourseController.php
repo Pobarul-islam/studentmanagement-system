@@ -48,9 +48,10 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id):View
     {
-       
+        $courses = Course::find($id);
+        return view('courses.edit')->with('course', $courses);
     }
 
     /**
@@ -58,7 +59,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-     
+        $courses = Course::find($id);
+        $input = $request->all();
+        $courses->update($input);
+        return redirect('courses')->with('flash_message', 'Course updated successfully !');
     }
 
     /**
