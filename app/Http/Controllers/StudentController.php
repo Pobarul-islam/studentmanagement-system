@@ -15,7 +15,7 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():View
+    public function index(): View
     {
         $students = Student::all();
         return view('students.index')->with('students', $students);
@@ -42,7 +42,7 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id):View
+    public function show(string $id): View
     {
         $student = Student::find($id);
         return view('students.show')->with('students', $student);
@@ -51,7 +51,7 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id):View
+    public function edit(string $id): View
     {
         $student = Student::find($id);
         return view('students.edit')->with('students', $student);
@@ -65,7 +65,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $input = $request->all();
         $student->update($input);
-        return redirect('students')->with('flash_message', 'student Updated!');  
+        return redirect('students')->with('flash_message', 'student Updated!');
     }
 
     /**
@@ -74,6 +74,6 @@ class StudentController extends Controller
     public function destroy(string $id): RedirectResponse
     {
         Student::destroy($id);
-        return redirect('students')->with('flash_message', 'Student deleted!'); 
+        return redirect('students')->with('flash_message', 'Student deleted!');
     }
 }

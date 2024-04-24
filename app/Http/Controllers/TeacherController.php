@@ -40,7 +40,7 @@ class TeacherController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id) : View
+    public function show(string $id): View
     {
         $teacher = Teacher::find($id);
         return view('teachers.show')->with('teachers', $teacher);
@@ -53,7 +53,6 @@ class TeacherController extends Controller
     {
         $teachers = Teacher::find($id);
         return view('teachers.edit')->with('teachers', $teachers);
-
     }
 
     /**
@@ -74,6 +73,5 @@ class TeacherController extends Controller
     {
         Teacher::destroy($id);
         return redirect('teachers')->with('flash_message', 'Teacher deleted successfully');
-
     }
 }
