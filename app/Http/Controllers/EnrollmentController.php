@@ -48,7 +48,8 @@ class EnrollmentController extends Controller
      */
     public function edit(string $id)
     {
-      
+        $enrollments = Enrollment::find($id);
+        return view('enrollments.edit')->with('enrollments', $enrollments);
     }
 
     /**
@@ -56,7 +57,10 @@ class EnrollmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+        $enrollments = Enrollment::find($id);
+        $input = $request->all();
+        $enrollments->update($input);
+        return redirect('enrollments')->with('flash_message', 'enrollment updated successfully');
     }
 
     /**
