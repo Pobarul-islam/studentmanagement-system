@@ -68,6 +68,7 @@ class EnrollmentController extends Controller
      */
     public function destroy(string $id)
     {
-       
+        Enrollment::destroy($id);
+        return redirect('enrollments')->with('flash_message', 'enrollments deleted successfully');
     }
 }
