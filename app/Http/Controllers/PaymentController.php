@@ -42,7 +42,8 @@ class PaymentController extends Controller
      */
     public function show(string $id)
     {
-        
+        $payments = Payment::find($id);
+        return view('payments.show')->with('payments', $payments);
     }
 
     /**
@@ -52,7 +53,10 @@ class PaymentController extends Controller
     {
 
 
-    
+        $payments = Payment::find($id);
+        $enrollments = Enrollment::pluck('enroll_no', 'id');
+
+        return view('payments.edit', compact('payments', 'enrollments'));
     }
 
     /**
@@ -60,7 +64,10 @@ class PaymentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-      
+        $payments = Payment::find($id);
+        $input = $request->all();
+        $payments->update($input);
+        return redirect('payments')->with('flash_message', 'Payment Updated!');
     }
 
     /**
