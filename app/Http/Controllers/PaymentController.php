@@ -75,6 +75,7 @@ class PaymentController extends Controller
      */
     public function destroy(string $id)
     {
-        
+        Payment::destroy($id);
+        return redirect('payments')->with('flash_message', 'Payment deleted!');
     }
 }
