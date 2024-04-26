@@ -32,13 +32,13 @@
 
         /* Active/current link */
         .sidebar a.active {
-            background-color: #04AA6D;
+            background-color: #192235;
             color: white;
         }
 
         /* Links on mouse-over */
         .sidebar a:hover:not(.active) {
-            background-color: #555;
+            background-color: #192235;
             color: white;
         }
 
@@ -80,12 +80,12 @@
 
 </head>
 
-<body>
-    <div class="container col-12">
+<body >
+    <div class="container col-12" >
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <h1 class="navbar-brand" href="#">Student Management System</h1>
+                    <h1 class="navbar-brand"> <a style="text-decoration: none" href="/">Student Management System</a> </h1>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -112,14 +112,13 @@
                 </div>
 
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9" >
 
                 @yield('content')
 
             </div>
         </div>
     </div>
-
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

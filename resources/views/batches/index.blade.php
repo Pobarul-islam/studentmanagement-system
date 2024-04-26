@@ -4,7 +4,7 @@
         <div class="card-header">
             <h2>Batch Application</h2>
         </div>
-        <div class="card-body">
+        <div class="card-body" >
             <a href="{{ url('/batches/create') }}" class="btn btn-success btn-sm" title="Add New Student">
                 <i class="fa fa-plus" aria-hidden="true"></i> Add New
             </a>
