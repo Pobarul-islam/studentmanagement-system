@@ -27,12 +27,24 @@ class ReportController extends Controller
         $print .= "<p>Enrollment No : <b>" . $payment->enrollment->enroll_no . "</b> </p>";
         $print .= "<p>Student Name : <b>" . $payment->enrollment->student->name . "</b> </p>";
         $print .= "<hr/>";
+
+        // Table creation
         $print .= "<table style='width:100%;'>";
-        $print .= "<tr><td>Batch</td><td>Amount</td></tr>";
-        $print .= "<tr><td>" . $payment->enrollment->batch->name . "</td><td>" . $payment->amount . "</td></tr>";
+        $print .= "<tr>";
+        $print .= "<td>Batch :</td>";
+
+        $print .= "<td><h3>" . $payment->enrollment->batch->name . "</h3></td>";
+        $print .= "</tr>";
+
+        $print .= "<tr>";
+        $print .= "<td>Amount :</td>";
+        $print .= "<td><h3>" . $payment->amount . "</h3></td>";
+        $print .= "</tr>";
+
         $print .= "</table>";
+
+        // Printed date
         $print .= "<hr/>";
-        // $print .= "<span>Printed By: <b>" . Auth::user()->name . "</b></span>";
         $print .= "<span>Printed Date: <b>" . date('Y-m-d') . "</b></span>";
         $print .= "</div>";
 
