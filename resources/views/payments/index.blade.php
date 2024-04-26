@@ -25,7 +25,8 @@
                         @foreach ($payments as $item)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->enrollment->enroll_no }}</td>         <td>{{ $item->paid_date }}</td>
+                                <td>{{ $item->enrollment->enroll_no }}</td>
+                                <td>{{ $item->paid_date }}</td>
                                 <td>{{ $item->amount }}</td>
 
                                 <td>
@@ -45,6 +46,7 @@
                                             onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
                                                 aria-hidden="true"></i> Delete</button>
                                     </form>
+                                    <a href="{{ url('report/report1/' . $item->id) }}" title="Edit Payment"> <button class="btn btn-success" > <i class="fa fa-print" aria-hidden="true"></i>Print</button> </a>
                                 </td>
                             </tr>
                         @endforeach
